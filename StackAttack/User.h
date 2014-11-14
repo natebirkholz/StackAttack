@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Nate Birkholz. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface User : NSObject
 
@@ -15,5 +15,6 @@
 @property (nonatomic, strong) NSString *profile_image_url;
 @property (nonatomic, strong) NSString *display_name;
 @property (nonatomic, strong) NSString *link_url;
+@property (nonatomic, strong) UIImage *user_avatar;
 
 @end

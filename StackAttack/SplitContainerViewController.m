@@ -20,8 +20,10 @@
 - (instancetype)init
 {
   self = [super init];
+  
   if (self) {
     self.networkController = [NetworkController sharedNetworkController];
+    self.appDelegate = [[UIApplication sharedApplication] delegate];
   }
   return self;
 }

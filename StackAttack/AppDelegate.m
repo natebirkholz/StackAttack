@@ -19,6 +19,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
+  self.networkController = [[NetworkController alloc] init];
+
   NSString *key = @"hasLaunched";
 
   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

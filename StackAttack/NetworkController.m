@@ -7,7 +7,7 @@
 //
 
 #import "NetworkController.h"
-#import <UIKit/UIKit.h>
+
 
 @implementation NetworkController
 
@@ -34,37 +34,61 @@
 - (id) init {
     if ((self = [super init])) {
 
-      self.apiURL = @"apiURL";
+      self.imageQueue = [[NSOperationQueue alloc] init];
+      self.amp = @"&";
+      self.apiURL = @"api.stackexchange.com/";
       self.url = @"url";
-      self.stackOverflowOAuthURL = @"stackOverflowOAuthURL";
-      self.scope = @"scope";
-      self.redirectURL = @"redirectURL";
-      self.clientID = @"clientID";
-      self.clientSecret = @"clientSecret";
+      self.searchURL = @"/2.2/search?order=desc&sort=activity&site=stackoverflow&filter=withbody&tagged=";
+      self.stackOverflowOAuthURLStepOne = @"https://stackexchange.com/oauth/dialog?";
+      self.stackOverflowOAuthURL = @"stackexchange.com/oauth.login_success";
+      self.scope = @"scope=no_expiry";
+      self.redirectURL = @"&redirect_uri=https://stackexchange.com/oauth/login_success";
+      self.clientID = @"3840";
+      self.clientSecret = @"ORChu17roggtjWtY9S3OsQ((";
       self.stackOverflowPostURL = @"stackOverflowPostURL";
       self.someProperty = @"Default Property Value";
+      self.key_for = @")Dwa1LBFUglgpasZ0dRQUg((";
 
     }
     return self;
 }
 
-- (void) requestOAuthAccess {
-  NSArray *stringsFor = [[NSArray alloc] initWithObjects: self.stackOverflowOAuthURL, self.clientID, @"&", self.scope, nil];
-  NSString *url = [stringsFor componentsJoinedByString:(NSString *) @""];
-  [[UIApplication sharedApplication] openURL:(NSURL *) url];
+- (NSString *) makeRequestOAuthAccessStepOne {
   
+  NSArray *stringsFor = [[NSArray alloc] initWithObjects: self.stackOverflowOAuthURLStepOne, self.clientID, self.amp, self.scope, self.amp, self.redirectURL, nil];
+  NSString *url = [stringsFor componentsJoinedByString:(NSString *) @""];
+  NSLog(@"%@", url);
+  return url;
+
 }
+
+
 
 -(void) handleOAuthURL:(NSURL *) callbackURL completionHandler:(void (^)(BOOL successIs))completionHandler {
 
   NSString *query = callbackURL.query;
   NSArray *components = [query componentsSeparatedByString:@"code="];
   NSString *code = components.lastObject;
-
+  NSString *amp = @"&";
+  NSString *urlQuery = self.clientID;
+  urlQuery = [urlQuery stringByAppendingString:amp];
+  urlQuery = [urlQuery stringByAppendingString:self.clientSecret];
+  urlQuery = [urlQuery stringByAppendingString:amp];
+  urlQuery = [urlQuery stringByAppendingString:];
 
 }
 
+- (void) getImageFromURL:(NSString *) imageURL completionHandler:(void (^)(UIImage *imageFor))completionHandler {
+  [self.imageQueue addOperationWithBlock:^{
+    NSURL *avatarURL = [NSURL URLWithString:imageURL];
+    NSData *imageData = [NSData dataWithContentsOfURL: avatarURL];
+    UIImage *imageFor = [UIImage imageWithData: imageData];
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
 
+      completionHandler(imageFor);
+        }];
+    }];
+}
 
 
 

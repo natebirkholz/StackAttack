@@ -14,12 +14,20 @@
 {
   self = [super init];
   if (self) {
-    self.questionDictionary = (NSDictionary *)questionDictionary;
+    self.networkController = [NetworkController sharedNetworkController];
+    self.questionDictionary = questionDictionary;
     self.tags = (NSArray *)questionDictionary[@"tags"];
     self.ownerDictionary = (NSDictionary *)questionDictionary[@"owner"];
     self.link = (NSString *)questionDictionary[@"link"];
     self.title = (NSString *)questionDictionary[@"title"];
     self.body = (NSString *)questionDictionary[@"body"];
+    NSString *urlForImage = [questionDictionary valueForKeyPath:@"owner.profile_image"];
+    __block UIImage *imageForIs = [[UIImage alloc] init];
+    [self.networkController getImageFromURL:urlForImage completionHandler:^(UIImage *imageFor) {
+       imageForIs = (UIImage *)imageFor;
+    }];
+    self.avatar = imageForIs;
+
   }
   return self;
 }

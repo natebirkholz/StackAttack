@@ -7,6 +7,7 @@
 //
 
 #import "NetworkController.h"
+#import "WebViewController.h"
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 

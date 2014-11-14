@@ -10,6 +10,8 @@
 		4334465D1A117EA8008959C5 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334465C1A117EA8008959C5 /* Question.m */; };
 		433446601A1183B7008959C5 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334465F1A1183B7008959C5 /* User.m */; };
 		433446631A126B88008959C5 /* SplitContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 433446621A126B88008959C5 /* SplitContainerViewController.m */; };
+		433446661A12B1B9008959C5 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 433446651A12B1B9008959C5 /* DetailViewController.m */; };
+		43B84B271A12DC5200449DA9 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B84B261A12DC5200449DA9 /* WebViewController.m */; };
 		43D701631A114B4A00D2DD5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D701621A114B4A00D2DD5A /* main.m */; };
 		43D701661A114B4A00D2DD5A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D701651A114B4A00D2DD5A /* AppDelegate.m */; };
 		43D701691A114B4A00D2DD5A /* StackAttack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 43D701671A114B4A00D2DD5A /* StackAttack.xcdatamodeld */; };
@@ -19,6 +21,9 @@
 		43D701741A114B4A00D2DD5A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43D701721A114B4A00D2DD5A /* LaunchScreen.xib */; };
 		43D701801A114B4B00D2DD5A /* StackAttackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D7017F1A114B4B00D2DD5A /* StackAttackTests.m */; };
 		43D7018F1A1151B300D2DD5A /* NetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D7018E1A1151B300D2DD5A /* NetworkController.m */; };
+		43F933241A14004500F21384 /* TimelineViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F933221A14004500F21384 /* TimelineViewTableViewCell.m */; };
+		43F933251A14004500F21384 /* TimelineViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43F933231A14004500F21384 /* TimelineViewTableViewCell.xib */; };
+		43F933271A14012E00F21384 /* TerminusTTF-4.39.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43F933261A14012E00F21384 /* TerminusTTF-4.39.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +43,10 @@
 		4334465F1A1183B7008959C5 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		433446611A126B88008959C5 /* SplitContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitContainerViewController.h; sourceTree = "<group>"; };
 		433446621A126B88008959C5 /* SplitContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitContainerViewController.m; sourceTree = "<group>"; };
+		433446641A12B1B9008959C5 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		433446651A12B1B9008959C5 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		43B84B251A12DC5200449DA9 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		43B84B261A12DC5200449DA9 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		43D7015D1A114B4A00D2DD5A /* StackAttack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackAttack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43D701611A114B4A00D2DD5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43D701621A114B4A00D2DD5A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -54,6 +63,10 @@
 		43D7017F1A114B4B00D2DD5A /* StackAttackTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StackAttackTests.m; sourceTree = "<group>"; };
 		43D7018D1A1151B300D2DD5A /* NetworkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkController.h; sourceTree = "<group>"; };
 		43D7018E1A1151B300D2DD5A /* NetworkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkController.m; sourceTree = "<group>"; };
+		43F933211A14004500F21384 /* TimelineViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineViewTableViewCell.h; sourceTree = "<group>"; };
+		43F933221A14004500F21384 /* TimelineViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineViewTableViewCell.m; sourceTree = "<group>"; };
+		43F933231A14004500F21384 /* TimelineViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineViewTableViewCell.xib; sourceTree = "<group>"; };
+		43F933261A14012E00F21384 /* TerminusTTF-4.39.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TerminusTTF-4.39.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +125,13 @@
 				4334465F1A1183B7008959C5 /* User.m */,
 				433446611A126B88008959C5 /* SplitContainerViewController.h */,
 				433446621A126B88008959C5 /* SplitContainerViewController.m */,
+				433446641A12B1B9008959C5 /* DetailViewController.h */,
+				433446651A12B1B9008959C5 /* DetailViewController.m */,
+				43B84B251A12DC5200449DA9 /* WebViewController.h */,
+				43B84B261A12DC5200449DA9 /* WebViewController.m */,
+				43F933211A14004500F21384 /* TimelineViewTableViewCell.h */,
+				43F933221A14004500F21384 /* TimelineViewTableViewCell.m */,
+				43F933231A14004500F21384 /* TimelineViewTableViewCell.xib */,
 			);
 			path = StackAttack;
 			sourceTree = "<group>";
@@ -119,6 +139,7 @@
 		43D701601A114B4A00D2DD5A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				43F933261A14012E00F21384 /* TerminusTTF-4.39.ttf */,
 				43D701611A114B4A00D2DD5A /* Info.plist */,
 				43D701621A114B4A00D2DD5A /* main.m */,
 			);
@@ -224,7 +245,9 @@
 			files = (
 				43D7016F1A114B4A00D2DD5A /* Main.storyboard in Resources */,
 				43D701741A114B4A00D2DD5A /* LaunchScreen.xib in Resources */,
+				43F933271A14012E00F21384 /* TerminusTTF-4.39.ttf in Resources */,
 				43D701711A114B4A00D2DD5A /* Images.xcassets in Resources */,
+				43F933251A14004500F21384 /* TimelineViewTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,10 +266,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				43D701691A114B4A00D2DD5A /* StackAttack.xcdatamodeld in Sources */,
+				43B84B271A12DC5200449DA9 /* WebViewController.m in Sources */,
 				433446601A1183B7008959C5 /* User.m in Sources */,
+				433446661A12B1B9008959C5 /* DetailViewController.m in Sources */,
 				43D701661A114B4A00D2DD5A /* AppDelegate.m in Sources */,
 				43D7016C1A114B4A00D2DD5A /* TimelineViewController.m in Sources */,
 				4334465D1A117EA8008959C5 /* Question.m in Sources */,
+				43F933241A14004500F21384 /* TimelineViewTableViewCell.m in Sources */,
 				43D701631A114B4A00D2DD5A /* main.m in Sources */,
 				43D7018F1A1151B300D2DD5A /* NetworkController.m in Sources */,
 				433446631A126B88008959C5 /* SplitContainerViewController.m in Sources */,
