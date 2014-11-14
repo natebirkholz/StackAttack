@@ -19,8 +19,8 @@
   self = [super init];
 
   if (self) {
-    self.networkController = [NetworkController sharedNetworkController];
-    self.appDelegate = [[UIApplication sharedApplication] delegate];
+
+//    self.appDelegate = [[UIApplication sharedApplication] delegate];
   }
   return self;
 }
@@ -28,7 +28,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-
+  NSLog(@"INITTING");
+  self.networkController = [NetworkController sharedNetworkController];
+  NSLog(@"%@", self.networkController.debugDescription);
 
 }
 
@@ -47,6 +49,7 @@
   webView.navigationDelegate = self;
 
   NSString *urlString = [self.networkController makeRequestOAuthAccessStepOne];
+  NSLog(@"the urlString is %@", urlString);
   NSURL *url = [[NSURL alloc] initWithString:urlString];
   NSURLRequest *request = [NSURLRequest requestWithURL:url];
   [webView loadRequest:request];
@@ -58,6 +61,10 @@
 -(void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
   NSURLRequest *request = navigationAction.request;
   NSURL *urlFromRequest = request.URL;
+
+  NSLog(@"LOGGING HERE");
+  NSLog(@"%@", urlFromRequest.description);
+  NSLog(@"%@", urlFromRequest.host);
 
   if ([urlFromRequest.description containsString:@"access_token"]) {
     [webView removeFromSuperview];

@@ -55,9 +55,9 @@
 
 - (NSString *) makeRequestOAuthAccessStepOne {
   
-  NSArray *stringsFor = [[NSArray alloc] initWithObjects: self.stackOverflowOAuthURLStepOne, self.clientID, self.amp, self.scope, self.amp, self.redirectURL, nil];
+  NSArray *stringsFor = [[NSArray alloc] initWithObjects: self.stackOverflowOAuthURLStepOne, @"client_id=", self.clientID, self.amp, self.scope, self.amp, self.redirectURL, nil];
   NSString *url = [stringsFor componentsJoinedByString:(NSString *) @""];
-  NSLog(@"%@", url);
+  NSLog(@" In makeRequestOAuthAccessStepOne, url is %@", url);
   return url;
 
 }
@@ -74,7 +74,8 @@
   urlQuery = [urlQuery stringByAppendingString:amp];
   urlQuery = [urlQuery stringByAppendingString:self.clientSecret];
   urlQuery = [urlQuery stringByAppendingString:amp];
-  urlQuery = [urlQuery stringByAppendingString:];
+  NSString *codeString = (@"code=%@", code);
+  urlQuery = [urlQuery stringByAppendingString:codeString];
 
 }
 

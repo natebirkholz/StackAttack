@@ -29,9 +29,15 @@
   if (valueFor == YES) {
     self.hasLaunched = YES;
   } else {
-    [self.networkController requestOAuthAccess];
+    [self.networkController makeRequestOAuthAccessStepOne];
     [defaults setBool:YES forKey:key];
     [defaults synchronize];
+
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+
+    UIViewController *webView = [storyboard instantiateViewControllerWithIdentifier:@"WEB_VC"];
+
+    self.window.rootViewController = webView;
   }
 
 

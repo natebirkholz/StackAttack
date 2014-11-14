@@ -66,49 +66,49 @@
   NSInteger *currenttag = (NSInteger *)cell.tag + 1;
   cell.tag = *(currenttag);
 
-
+  return cell;
 }
 
 
 
-func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-  let cellIdentifier = "REPO_CELL"
-  let repoForSection = self.repos?[indexPath.row] as Repo!
-  let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as RepoCell
-  cell.repoNameLabel.text = repoForSection.name as String!
-  cell.repoURLLabel.text = repoForSection.repoURL.debugDescription as String!
-  cell.ownerNameLabel.text = repoForSection.ownerName as String!
-  cell.repoIDLabel.text = String(repoForSection.id)
-  cell.imageViewAvatar.image = nil
-  var currentTag = cell.tag + 1
-  cell.tag = currentTag
-
-  if self.repos?[indexPath.row].avatar != nil {
-    if cell.tag == currentTag {
-      cell.imageViewAvatar.image = self.repos![indexPath.row].avatar!
-    }
-
-  } else {
-    cell.activityIndicator.startAnimating()
-    var repoForCell = self.repos![indexPath.row] as Repo
-    self.networkController.getAvatar(repoForCell.avatarURL, completionHandler: { (imageFor) -> (Void) in
-      let userAvatar = imageFor as UIImage!
-      UIView.transitionWithView(cell.imageView, duration: 0.3, options: UIViewAnimationOptions.TransitionFlipFromBottom, animations: { () -> Void in
-        if cell.tag == currentTag {
-          cell.imageViewAvatar.image = userAvatar as UIImage!
-        }
-        return ()
-      }, completion: { (completion) -> Void in
-        cell.activityIndicator.stopAnimating()
-        self.repos?[indexPath.row].avatar = userAvatar!
-      })
-    })
-
-  }
-
-  return cell
-
-}
+//func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//  let cellIdentifier = "REPO_CELL"
+//  let repoForSection = self.repos?[indexPath.row] as Repo!
+//  let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as RepoCell
+//  cell.repoNameLabel.text = repoForSection.name as String!
+//  cell.repoURLLabel.text = repoForSection.repoURL.debugDescription as String!
+//  cell.ownerNameLabel.text = repoForSection.ownerName as String!
+//  cell.repoIDLabel.text = String(repoForSection.id)
+//  cell.imageViewAvatar.image = nil
+//  var currentTag = cell.tag + 1
+//  cell.tag = currentTag
+//
+//  if self.repos?[indexPath.row].avatar != nil {
+//    if cell.tag == currentTag {
+//      cell.imageViewAvatar.image = self.repos![indexPath.row].avatar!
+//    }
+//
+//  } else {
+//    cell.activityIndicator.startAnimating()
+//    var repoForCell = self.repos![indexPath.row] as Repo
+//    self.networkController.getAvatar(repoForCell.avatarURL, completionHandler: { (imageFor) -> (Void) in
+//      let userAvatar = imageFor as UIImage!
+//      UIView.transitionWithView(cell.imageView, duration: 0.3, options: UIViewAnimationOptions.TransitionFlipFromBottom, animations: { () -> Void in
+//        if cell.tag == currentTag {
+//          cell.imageViewAvatar.image = userAvatar as UIImage!
+//        }
+//        return ()
+//      }, completion: { (completion) -> Void in
+//        cell.activityIndicator.stopAnimating()
+//        self.repos?[indexPath.row].avatar = userAvatar!
+//      })
+//    })
+//
+//  }
+//
+//  return cell
+//
+//}
 
 
 @end

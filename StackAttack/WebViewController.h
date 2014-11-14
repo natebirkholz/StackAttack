@@ -13,7 +13,7 @@
 
 @interface WebViewController : UIViewController <UIWebViewDelegate, WKNavigationDelegate>
 
-@property (nonatomic, weak) AppDelegate *appDelegate;
+//@property (nonatomic) AppDelegate *appDelegate;
 @property (nonatomic, strong) NetworkController *networkController;
 
 
