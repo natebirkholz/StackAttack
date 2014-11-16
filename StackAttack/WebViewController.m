@@ -20,7 +20,6 @@
 
   if (self) {
 
-//    self.appDelegate = [[UIApplication sharedApplication] delegate];
   }
   return self;
 }
@@ -28,18 +27,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-  NSLog(@"INITTING");
   self.networkController = [NetworkController sharedNetworkController];
-  NSLog(@"%@", self.networkController.debugDescription);
-
+  [self.loginButton setTitle:NSLocalizedString(@"Log In...", nil) forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 
 - (IBAction)buttonPressed:(id)sender; {
   NSLog(@"Button pressed");
@@ -56,7 +51,7 @@
   
 }
 
--(void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+-(void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler { // I wish I had time to refactor this
   NSURLRequest *request = navigationAction.request;
   NSURL *urlFromRequest = request.URL;
 
@@ -82,7 +77,7 @@
       }
     }
 
-    NSLog(@"The token is FOR REFERENCE VVVVVV^^^^^^^^^VVVVVVV %@", tokenFrom);
+    NSLog(@"The token is %@", tokenFrom);
 
     [[NSUserDefaults standardUserDefaults] setObject:tokenFrom forKey:@"access_token"];
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hasLaunched"];
@@ -101,9 +96,7 @@
   } else {
     decisionHandler(WKNavigationActionPolicyAllow);
   }
-
 }
-
 
 @end
 

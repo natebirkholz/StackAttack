@@ -12,7 +12,7 @@
 		433446631A126B88008959C5 /* SplitContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 433446621A126B88008959C5 /* SplitContainerViewController.m */; };
 		433446661A12B1B9008959C5 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 433446651A12B1B9008959C5 /* DetailViewController.m */; };
 		438906831A18A5B600D2D6DB /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 438906821A18A5B600D2D6DB /* test.json */; };
-		438906851A18AA1F00D2D6DB /* test2.json in Resources */ = {isa = PBXBuildFile; fileRef = 438906841A18AA1F00D2D6DB /* test2.json */; };
+		438906911A18DF3600D2D6DB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 438906931A18DF3600D2D6DB /* Localizable.strings */; };
 		43B84B271A12DC5200449DA9 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B84B261A12DC5200449DA9 /* WebViewController.m */; };
 		43D701631A114B4A00D2DD5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D701621A114B4A00D2DD5A /* main.m */; };
 		43D701661A114B4A00D2DD5A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D701651A114B4A00D2DD5A /* AppDelegate.m */; };
@@ -47,10 +47,11 @@
 		433446621A126B88008959C5 /* SplitContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitContainerViewController.m; sourceTree = "<group>"; };
 		433446641A12B1B9008959C5 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		433446651A12B1B9008959C5 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		433A64801A16C98E007301EA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
-		433A64811A16C98E007301EA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		438906821A18A5B600D2D6DB /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
-		438906841A18AA1F00D2D6DB /* test2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test2.json; sourceTree = "<group>"; };
+		438906961A18E62800D2D6DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4389069F1A18ED1E00D2D6DB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		438906A01A18ED1E00D2D6DB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		438906A11A18ED1E00D2D6DB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		43B84B251A12DC5200449DA9 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		43B84B261A12DC5200449DA9 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		43D7015D1A114B4A00D2DD5A /* StackAttack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackAttack.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +94,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		438906A21A18F0BD00D2D6DB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				433446611A126B88008959C5 /* SplitContainerViewController.h */,
+				433446621A126B88008959C5 /* SplitContainerViewController.m */,
+				433446641A12B1B9008959C5 /* DetailViewController.h */,
+				433446651A12B1B9008959C5 /* DetailViewController.m */,
+				43B84B251A12DC5200449DA9 /* WebViewController.h */,
+				43B84B261A12DC5200449DA9 /* WebViewController.m */,
+				43D701641A114B4A00D2DD5A /* AppDelegate.h */,
+				43D701651A114B4A00D2DD5A /* AppDelegate.m */,
+				43D7018D1A1151B300D2DD5A /* NetworkController.h */,
+				43D7018E1A1151B300D2DD5A /* NetworkController.m */,
+				43D7016A1A114B4A00D2DD5A /* QuestionSearchViewController.h */,
+				43D7016B1A114B4A00D2DD5A /* QuestionSearchViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		438906A31A18F0C800D2D6DB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				43F933211A14004500F21384 /* TimelineViewTableViewCell.h */,
+				43F933221A14004500F21384 /* TimelineViewTableViewCell.m */,
+				43F933231A14004500F21384 /* TimelineViewTableViewCell.xib */,
+				43D701721A114B4A00D2DD5A /* LaunchScreen.xib */,
+				43D7016D1A114B4A00D2DD5A /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		438906A41A18F0D200D2D6DB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4334465B1A117EA8008959C5 /* Question.h */,
+				4334465C1A117EA8008959C5 /* Question.m */,
+				4334465E1A1183B7008959C5 /* User.h */,
+				4334465F1A1183B7008959C5 /* User.m */,
+				43D701671A114B4A00D2DD5A /* StackAttack.xcdatamodeld */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		43D701541A114B4A00D2DD5A = {
 			isa = PBXGroup;
 			children = (
@@ -114,30 +158,10 @@
 		43D7015F1A114B4A00D2DD5A /* StackAttack */ = {
 			isa = PBXGroup;
 			children = (
-				43D701641A114B4A00D2DD5A /* AppDelegate.h */,
-				43D701651A114B4A00D2DD5A /* AppDelegate.m */,
-				43D7018D1A1151B300D2DD5A /* NetworkController.h */,
-				43D7018E1A1151B300D2DD5A /* NetworkController.m */,
-				43D7016A1A114B4A00D2DD5A /* QuestionSearchViewController.h */,
-				43D7016B1A114B4A00D2DD5A /* QuestionSearchViewController.m */,
-				43D7016D1A114B4A00D2DD5A /* Main.storyboard */,
-				43D701701A114B4A00D2DD5A /* Images.xcassets */,
-				43D701721A114B4A00D2DD5A /* LaunchScreen.xib */,
-				43D701671A114B4A00D2DD5A /* StackAttack.xcdatamodeld */,
+				438906A41A18F0D200D2D6DB /* Models */,
+				438906A31A18F0C800D2D6DB /* Views */,
+				438906A21A18F0BD00D2D6DB /* Controllers */,
 				43D701601A114B4A00D2DD5A /* Supporting Files */,
-				4334465B1A117EA8008959C5 /* Question.h */,
-				4334465C1A117EA8008959C5 /* Question.m */,
-				4334465E1A1183B7008959C5 /* User.h */,
-				4334465F1A1183B7008959C5 /* User.m */,
-				433446611A126B88008959C5 /* SplitContainerViewController.h */,
-				433446621A126B88008959C5 /* SplitContainerViewController.m */,
-				433446641A12B1B9008959C5 /* DetailViewController.h */,
-				433446651A12B1B9008959C5 /* DetailViewController.m */,
-				43B84B251A12DC5200449DA9 /* WebViewController.h */,
-				43B84B261A12DC5200449DA9 /* WebViewController.m */,
-				43F933211A14004500F21384 /* TimelineViewTableViewCell.h */,
-				43F933221A14004500F21384 /* TimelineViewTableViewCell.m */,
-				43F933231A14004500F21384 /* TimelineViewTableViewCell.xib */,
 			);
 			path = StackAttack;
 			sourceTree = "<group>";
@@ -145,6 +169,8 @@
 		43D701601A114B4A00D2DD5A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				43D701701A114B4A00D2DD5A /* Images.xcassets */,
+				438906931A18DF3600D2D6DB /* Localizable.strings */,
 				43F933261A14012E00F21384 /* TerminusTTF-4.39.ttf */,
 				43D701611A114B4A00D2DD5A /* Info.plist */,
 				43D701621A114B4A00D2DD5A /* main.m */,
@@ -164,7 +190,6 @@
 		43D7017D1A114B4B00D2DD5A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				438906841A18AA1F00D2D6DB /* test2.json */,
 				438906821A18A5B600D2D6DB /* test.json */,
 				43D7017E1A114B4B00D2DD5A /* Info.plist */,
 			);
@@ -234,6 +259,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 43D701541A114B4A00D2DD5A;
 			productRefGroup = 43D7015E1A114B4A00D2DD5A /* Products */;
@@ -252,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43D7016F1A114B4A00D2DD5A /* Main.storyboard in Resources */,
+				438906911A18DF3600D2D6DB /* Localizable.strings in Resources */,
 				43D701741A114B4A00D2DD5A /* LaunchScreen.xib in Resources */,
 				43F933271A14012E00F21384 /* TerminusTTF-4.39.ttf in Resources */,
 				43D701711A114B4A00D2DD5A /* Images.xcassets in Resources */,
@@ -263,7 +290,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				438906851A18AA1F00D2D6DB /* test2.json in Resources */,
 				438906831A18A5B600D2D6DB /* test.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,11 +334,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		438906931A18DF3600D2D6DB /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				438906961A18E62800D2D6DB /* en */,
+				438906A11A18ED1E00D2D6DB /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		43D7016D1A114B4A00D2DD5A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				43D7016E1A114B4A00D2DD5A /* Base */,
-				433A64801A16C98E007301EA /* fr */,
+				4389069F1A18ED1E00D2D6DB /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -321,7 +356,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				43D701731A114B4A00D2DD5A /* Base */,
-				433A64811A16C98E007301EA /* fr */,
+				438906A01A18ED1E00D2D6DB /* fr */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";

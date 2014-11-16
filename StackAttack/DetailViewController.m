@@ -8,33 +8,50 @@
 
 #import "DetailViewController.h"
 
+
 @interface DetailViewController ()
 
 @end
 
-@implementation DetailViewController
+@implementation DetailViewController 
 
 - (instancetype)init
 {
   self = [super init];
 
   if (self) {
-    self.networkController = [NetworkController sharedNetworkController];
-    self.appDelegate = [[UIApplication sharedApplication] delegate];
+
   }
   return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+  self.networkController = [NetworkController sharedNetworkController];
+  self.appDelegate = [[UIApplication sharedApplication] delegate];
+  NSDictionary *ownerFor = self.questionFor.ownerDictionary;
+  self.userFor = [User parseOwnerDictionaryIntoUser:ownerFor];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear: animated];
 
+  self.titleLabel.text = self.questionFor.title;
+  self.bodyLabel.text = self.questionFor.body;
+  NSString *tagsString = [self.questionFor.tags componentsJoinedByString:(NSString *) @", "];
+  self.tagsLabel.text = tagsString;
+  self.urlLabel.text = self.questionFor.link;
+  NSDictionary *ownerFrom = (NSDictionary *)self.questionFor.questionDictionary[@"owner"];
+  NSString *urlForImage = (NSString *)ownerFrom[@"profile_image"];
+  self.userNameLabel.text = self.userFor.display_name;
+  [self.networkController getImageFromURL:urlForImage completionHandler:^(UIImage *imageFor) {
+    self.imageView.image = imageFor;
+    self.userFor.user_avatar = imageFor;
+  }];
+}
 
 @end

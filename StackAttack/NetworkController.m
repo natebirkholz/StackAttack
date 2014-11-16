@@ -25,11 +25,13 @@
   return sharedNetworkController;
 }
 
-
-
 - (void)dealloc {
   // ARC is awesome but just in case...
 }
+
+// ########################################
+#pragma mark - INIT
+// ########################################
 
 
 - (id) init {
@@ -50,10 +52,7 @@
       self.someProperty = @"Default Property Value";
       self.key_for = @")Dwa1LBFUglgpasZ0dRQUg((";
 
-      NSString *key = @"hasLaunched";
 
-      NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-      BOOL valueFor = [defaults valueForKey:key];
 
       if ([[NSUserDefaults standardUserDefaults] boolForKey:@"hasLaunched"] == YES) {
         self.access_token = [[NSUserDefaults standardUserDefaults] objectForKey:@"access_token"];
@@ -65,29 +64,15 @@
     return self;
 }
 
+// ########################################
+#pragma mark - Newtork Methods
+// ########################################
+
 - (NSString *) makeRequestOAuthAccessStepOne {
   
   NSArray *stringsFor = [[NSArray alloc] initWithObjects: self.stackOverflowOAuthURLStepOne, @"client_id=", self.clientID, self.amp, self.scope, self.amp, self.redirectURL, nil];
   NSString *url = [stringsFor componentsJoinedByString:(NSString *) @""];
   return url;
-
-}
-
-
-
--(void) handleOAuthURL:(NSURL *) callbackURL completionHandler:(void (^)(BOOL successIs))completionHandler {
-
-  NSString *query = callbackURL.query;
-  NSArray *components = [query componentsSeparatedByString:@"code="];
-  NSString *code = components.lastObject;
-  NSString *amp = @"&";
-  NSString *urlQuery = self.clientID;
-  urlQuery = [urlQuery stringByAppendingString:amp];
-  urlQuery = [urlQuery stringByAppendingString:self.clientSecret];
-  urlQuery = [urlQuery stringByAppendingString:amp];
-  urlQuery = [urlQuery stringByAppendingString:@"code="];
-  urlQuery = [urlQuery stringByAppendingString:code];
-
 }
 
 - (BOOL) checkForAuthToken {
@@ -96,7 +81,6 @@
     NSLog(@"access_token is >>>>>>>>> %@", self.access_token);
     return YES;
   }
-
   return NO;
 }
 
@@ -108,11 +92,9 @@
     NSData *imageData = [NSData dataWithContentsOfURL: avatarURL];
     UIImage *imageFor = [UIImage imageWithData: imageData];
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-
       completionHandler(imageFor);
         }];
     }];
-
   } else {
     NSLog(@"No token found ------- take action");
   }
@@ -149,7 +131,6 @@
       NSLog(@"search url is %@", [searchURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]);
   NSURL *urlForSearch = [NSURL URLWithString:[searchURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 
-
   [self getDataFromURL:urlForSearch completionHandler:^(NSData *dataFrom) {
     NSArray *arrayFrom = [Question parseJSONDataIntoQuestions:dataFrom];
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
@@ -180,7 +161,6 @@
         NSLog(@"The value is %@", object);
       }];
 
-
       NSInteger statusCode = [httpResponse statusCode];
       NSLog(@"Status code is: %ld", (long)statusCode);
       switch (statusCode) {
@@ -203,47 +183,3 @@
 
 
 @end
-
-
-/*
-
- func handleOAuthURL(callbackURL: NSURL, completionHandler: (successIs: Bool) -> (Void)) {
- //        Use OAuth Access to generate OAuth token
- let query = callbackURL.query
- let components = query?.componentsSeparatedByString("code=")
- let code = components?.last!
- let urlQuery = self.clientID + "&" + self.clientSecret + "&" + "code=\(code!)"
- var request = NSMutableURLRequest(URL: NSURL(string: gitHubPostURL)!)
- request.HTTPMethod = "POST"
- var postData = urlQuery.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true)
- let length = postData!.length
- request.setValue("\(length)", forHTTPHeaderField: "Content-Length")
- request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
- request.HTTPBody = postData
-
- let datatask: Void = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
- if error != nil {
- print("alert: ERROR is ")
- println(error.localizedDescription)
- } else {
- if let httpResponse = response as? NSHTTPURLResponse {
- switch httpResponse.statusCode {
- case 200...204:
- var tokenResponse = NSString(data: data, encoding: NSASCIIStringEncoding)
- let tokenComponents = tokenResponse?.componentsSeparatedByString("=")
- let tokenSeed = tokenComponents?[1].componentsSeparatedByString("&")
- let tokenFor = tokenSeed?.first! as String!
- let key = "OAuthToken"
- NSUserDefaults.standardUserDefaults().setValue(tokenFor, forKey: key)
- NSUserDefaults.standardUserDefaults().synchronize()
- completionHandler(successIs: true)
- default:
- println("default")
- completionHandler(successIs: false)
- }
- }
- }
- }) .resume()
-
- } 
-*/

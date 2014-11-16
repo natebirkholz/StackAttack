@@ -30,6 +30,10 @@
   return self;
 }
 
+// ########################################
+#pragma mark - Lifecycle
+// ########################################
+
 - (void)viewDidLoad {
   [super viewDidLoad];
 
@@ -37,15 +41,17 @@
   self.appDelegate = [[UIApplication sharedApplication] delegate];
 
   self.searchBar.delegate = self;
-  self.searchBar.prompt = @"Search StackOverflow Tags...";
+
+  self.searchBar.prompt = [NSString stringWithFormat:NSLocalizedString(@"Search for Tags...", nil)];
   self.tableView.dataSource = self;
-  self.tableView.dataSource = self;
+  self.tableView.delegate = self;
   [self.tableView registerNib:[UINib nibWithNibName:@"TimelineViewTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"TIMELINE_CELL"];
   [self.tableView reloadData];
 }
 
-
-
+// ########################################
+#pragma mark - TableView
+// ########################################
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
@@ -70,7 +76,7 @@
 
   NSString *tagsString = [questionForRow.tags componentsJoinedByString:(NSString *) @", "];
   cell.tagsArrayLabel.text = tagsString;
-  NSInteger *currenttag = (NSInteger *)cell.tag + 1;
+  NSInteger currenttag = cell.tag + 1;
   cell.tag = currenttag;
 
   [self.networkController getImageFromURL:imageSource completionHandler:^(UIImage *imageFor) {
@@ -87,6 +93,27 @@
 
   return cell;
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  NSLog(@"I'm here-------------------------------------------------------------");
+  Question *selectedQuestion = self.questions[indexPath.row];
+
+  [self performSegueWithIdentifier:@"SHOW_DET" sender:selectedQuestion];
+
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  if ([segue.identifier isEqualToString:@"SHOW_DET"]) {
+    DetailViewController *destinationVC = segue.destinationViewController;
+    Question *sentQuestion = sender;
+    destinationVC.questionFor = sentQuestion;
+
+  }
+}
+
+// ########################################
+#pragma mark - SearchBar
+// ########################################
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
   NSString *searchText = searchBar.text;
@@ -111,7 +138,5 @@
       return YES;
     }
   }
-
-
 
 @end

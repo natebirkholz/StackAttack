@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "QuestionSearchViewController.h"
+#import "DetailViewController.h"
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
@@ -19,7 +21,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-
+//  UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
+//  UINavigationController *navController = [splitViewController.viewControllers objectAtIndex:0];
+//
+//  QuestionSearchViewController *questionSearchViewController = (QuestionSearchViewController *)[navController topViewController];
+//  DetailViewController *detailViewController = [splitViewController.viewControllers objectAtIndex:1];
 
   NSString *key = @"hasLaunched";
 
@@ -41,7 +47,7 @@
     self.window.rootViewController = webView;
   }
 
-
+//  questionSearchViewController.delegate = detailViewController;
 
   return YES;
 }

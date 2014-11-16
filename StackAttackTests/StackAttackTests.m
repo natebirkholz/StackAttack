@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import "Question.h"
+#import "User.h"
 
 @interface StackAttackTests : XCTestCase
 
@@ -41,7 +42,7 @@
 - (void)testQuestionParser {
 
   NSBundle *bundleForTests = [NSBundle bundleForClass:[self class]];
-  NSString *pathForTests = [bundleForTests pathForResource:@"test2" ofType:@"json"];
+  NSString *pathForTests = [bundleForTests pathForResource:@"test" ofType:@"json"];
   NSData *dataForTest = [NSData dataWithContentsOfFile:pathForTests];
   NSArray *questions = [Question parseJSONDataIntoQuestions:dataForTest];
 
@@ -52,6 +53,10 @@
   XCTAssertTrue([question.title isEqualToString:@"Objective-C: data not returned as JSON"]);
 
   XCTAssertTrue(questions.count == 1);
+
+//  User *userForTest = 
+
+
 }
 
 @end

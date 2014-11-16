@@ -1,3 +1,18 @@
 
+/* Class = "IBUILabel"; text = "userNameLabel"; ObjectID = "CU4-AZ-ro8"; */
+"CU4-AZ-ro8.text" = "userNameLabel";
+
+/* Class = "IBUILabel"; text = "urlLabel"; ObjectID = "Xnj-Vk-mcP"; */
+"Xnj-Vk-mcP.text" = "urlLabel";
+
 /* Class = "IBUIButton"; normalTitle = "Log In"; ObjectID = "ZOQ-sf-4x9"; */
 "ZOQ-sf-4x9.normalTitle" = "Log In";
+
+/* Class = "IBUILabel"; text = "tagsLabel"; ObjectID = "cM0-2r-ced"; */
+"cM0-2r-ced.text" = "tagsLabel";
+
+/* Class = "IBUILabel"; text = "titleLabel"; ObjectID = "ksD-Ta-oQd"; */
+"ksD-Ta-oQd.text" = "titleLabel";
+
+/* Class = "IBUILabel"; text = "bodyLabel"; ObjectID = "tFu-NW-C5e"; */
+"tFu-NW-C5e.text" = "bodyLabel";

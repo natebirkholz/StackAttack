@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "NetworkController.h"
+#import "DetailViewController.h"
 
 #import <UIKit/UIKit.h>
 
@@ -19,8 +20,6 @@
 
 @property (nonatomic, weak) AppDelegate *appDelegate;
 @property (nonatomic, weak) NetworkController *networkController;
-
-
 
 
 @end

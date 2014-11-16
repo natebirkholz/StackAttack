@@ -8,12 +8,23 @@
 
 #import "AppDelegate.h"
 #import "NetworkController.h"
+#import "Question.h"
+#import "User.h"
 
 #import <UIKit/UIKit.h>
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController 
 
 @property (nonatomic, strong) NetworkController *networkController;
 @property (nonatomic, weak) AppDelegate *appDelegate;
+@property (nonatomic, strong) Question *questionFor;
+@property (nonatomic, strong) User *userFor;
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bodyLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tagsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *urlLabel;
 
 @end

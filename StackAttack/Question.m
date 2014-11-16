@@ -21,13 +21,12 @@
     self.link = (NSString *)questionDictionary[@"link"];
     self.title = (NSString *)questionDictionary[@"title"];
     self.body = (NSString *)questionDictionary[@"body"];
-    NSString *urlForImage = [questionDictionary valueForKeyPath:@"owner.profile_image"];
+    NSString *urlForImage = [questionDictionary valueForKeyPath:@"owner.profile_image"]; // KC! KVC!
     __block UIImage *imageForIs = [[UIImage alloc] init];
     [self.networkController getImageFromURL:urlForImage completionHandler:^(UIImage *imageFor) {
        imageForIs = (UIImage *)imageFor;
     }];
     self.avatar = imageForIs;
-
   }
   return self;
 }
@@ -36,18 +35,16 @@
 
   NSError *error;
   NSLog(@"%@", error.localizedDescription);
-
   NSDictionary *topDictionary = [NSJSONSerialization JSONObjectWithData:rawJSonData options:NSJSONReadingAllowFragments error:&error];
   NSArray *JSONArray = (NSArray *)topDictionary[@"items"];
+  NSLog(@"Found this in items: %@", topDictionary[@"items"]);
   NSMutableArray *questions = [[NSMutableArray alloc]init];
 
   for (NSDictionary *JSonDictionary in JSONArray) {
     Question *newQuestion = [[Question alloc] init:JSonDictionary];
     [questions addObject:newQuestion];
   }
-
   return questions;
-  
 }
 
 

@@ -4,6 +4,15 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="TerminusTTF-4.39.ttf">
+            <string>TerminusTTF</string>
+            <string>TerminusTTF</string>
+            <string>TerminusTTF</string>
+            <string>TerminusTTF</string>
+            <string>TerminusTTF</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Split Container View Controller-->
         <scene sceneID="QCZ-fZ-Pgr">
@@ -37,10 +46,10 @@
             </objects>
             <point key="canvasLocation" x="-1003" y="633"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="sKl-OV-N2g">
             <objects>
-                <viewController id="Tx8-Mm-PjO" sceneMemberID="viewController">
+                <viewController id="Tx8-Mm-PjO" customClass="DetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eSq-XL-uuM"/>
                         <viewControllerLayoutGuide type="bottom" id="xMy-Eh-X6O"/>
@@ -48,8 +57,75 @@
                     <view key="view" contentMode="scaleToFill" id="1PA-Vg-HL4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vXv-bJ-d2y">
+                                <rect key="frame" x="268" y="8" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="OjF-7g-p71"/>
+                                    <constraint firstAttribute="width" constant="64" id="QR1-tZ-kX1"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titleLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksD-Ta-oQd">
+                                <rect key="frame" x="56" y="88" width="488" height="15"/>
+                                <fontDescription key="fontDescription" name="TerminusTTF" family="Terminus (TTF)" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="500" text="bodyLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="6" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tFu-NW-C5e">
+                                <rect key="frame" x="24" y="111" width="552" height="13"/>
+                                <fontDescription key="fontDescription" name="TerminusTTF" family="Terminus (TTF)" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="userNameLabel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CU4-AZ-ro8">
+                                <rect key="frame" x="56" y="132" width="488" height="11"/>
+                                <fontDescription key="fontDescription" name="TerminusTTF" family="Terminus (TTF)" pointSize="10"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="urlLabel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xnj-Vk-mcP">
+                                <rect key="frame" x="56" y="151" width="488" height="11"/>
+                                <fontDescription key="fontDescription" name="TerminusTTF" family="Terminus (TTF)" pointSize="10"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tagsLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cM0-2r-ced">
+                                <rect key="frame" x="56" y="170" width="488" height="11"/>
+                                <fontDescription key="fontDescription" name="TerminusTTF" family="Terminus (TTF)" pointSize="10"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="vXv-bJ-d2y" secondAttribute="centerX" id="3eG-1V-kAp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ksD-Ta-oQd" secondAttribute="trailing" constant="40" id="8eF-mg-nZJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cM0-2r-ced" secondAttribute="trailing" constant="40" id="FIb-3m-4D3"/>
+                            <constraint firstItem="Xnj-Vk-mcP" firstAttribute="top" secondItem="CU4-AZ-ro8" secondAttribute="bottom" constant="8" id="FXQ-ln-hcC"/>
+                            <constraint firstItem="cM0-2r-ced" firstAttribute="leading" secondItem="1PA-Vg-HL4" secondAttribute="leadingMargin" constant="40" id="GRw-4t-159"/>
+                            <constraint firstItem="ksD-Ta-oQd" firstAttribute="top" secondItem="vXv-bJ-d2y" secondAttribute="bottom" constant="16" id="QWg-Rc-gvb"/>
+                            <constraint firstItem="vXv-bJ-d2y" firstAttribute="top" secondItem="eSq-XL-uuM" secondAttribute="bottom" constant="8" id="Qsm-I4-YHx"/>
+                            <constraint firstItem="Xnj-Vk-mcP" firstAttribute="leading" secondItem="1PA-Vg-HL4" secondAttribute="leadingMargin" constant="40" id="VHa-yi-FoK"/>
+                            <constraint firstItem="tFu-NW-C5e" firstAttribute="top" secondItem="ksD-Ta-oQd" secondAttribute="bottom" constant="8" id="WNw-Sk-Gje"/>
+                            <constraint firstItem="ksD-Ta-oQd" firstAttribute="leading" secondItem="1PA-Vg-HL4" secondAttribute="leadingMargin" constant="40" id="XEx-se-Q76"/>
+                            <constraint firstItem="tFu-NW-C5e" firstAttribute="leading" secondItem="1PA-Vg-HL4" secondAttribute="leadingMargin" constant="8" id="a5s-vl-jRq"/>
+                            <constraint firstItem="CU4-AZ-ro8" firstAttribute="top" secondItem="tFu-NW-C5e" secondAttribute="bottom" constant="8" id="bjz-P6-WID"/>
+                            <constraint firstItem="CU4-AZ-ro8" firstAttribute="leading" secondItem="1PA-Vg-HL4" secondAttribute="leadingMargin" constant="40" id="c9M-Ja-YrZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CU4-AZ-ro8" secondAttribute="trailing" constant="40" id="eC2-QJ-ax2"/>
+                            <constraint firstItem="cM0-2r-ced" firstAttribute="top" secondItem="Xnj-Vk-mcP" secondAttribute="bottom" constant="8" id="mNc-7i-ez5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tFu-NW-C5e" secondAttribute="trailing" constant="8" id="mze-VC-iLS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Xnj-Vk-mcP" secondAttribute="trailing" constant="40" id="xHa-qE-c6B"/>
+                            <constraint firstItem="xMy-Eh-X6O" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cM0-2r-ced" secondAttribute="bottom" constant="8" id="xgK-aE-5BK"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bodyLabel" destination="tFu-NW-C5e" id="Xh4-vN-gxm"/>
+                        <outlet property="imageView" destination="vXv-bJ-d2y" id="1pK-2O-zr3"/>
+                        <outlet property="tagsLabel" destination="cM0-2r-ced" id="Al9-YI-GBB"/>
+                        <outlet property="titleLabel" destination="ksD-Ta-oQd" id="PXb-m2-OSl"/>
+                        <outlet property="urlLabel" destination="Xnj-Vk-mcP" id="oa4-ZR-CFA"/>
+                        <outlet property="userNameLabel" destination="CU4-AZ-ro8" id="oPv-ux-fym"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HJH-bC-HQT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -130,6 +206,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="txu-BH-42n" id="JPU-dw-ALl">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Tx8-Mm-PjO" kind="showDetail" identifier="SHOW_DET" id="GfD-E0-hXA"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -173,4 +252,7 @@
             <point key="canvasLocation" x="-271" y="633"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="GfD-E0-hXA"/>
+    </inferredMetricsTieBreakers>
 </document>

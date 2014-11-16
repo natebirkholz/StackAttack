@@ -16,7 +16,6 @@
 //@property (nonatomic) AppDelegate *appDelegate;
 @property (nonatomic, strong) NetworkController *networkController;
 
-
 @property (nonatomic, weak) WKWebView *webView;
 @property (nonatomic, strong) IBOutlet UIButton *loginButton;
 
