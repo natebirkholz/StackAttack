@@ -27,7 +27,7 @@
 
 
 - (void)dealloc {
-  // Should never be called, but just here for clarity really.
+  // ARC is awesome but just in case...
 }
 
 
@@ -74,8 +74,8 @@
   urlQuery = [urlQuery stringByAppendingString:amp];
   urlQuery = [urlQuery stringByAppendingString:self.clientSecret];
   urlQuery = [urlQuery stringByAppendingString:amp];
-  NSString *codeString = (@"code=%@", code);
-  urlQuery = [urlQuery stringByAppendingString:codeString];
+  urlQuery = [urlQuery stringByAppendingString:@"code="];
+  urlQuery = [urlQuery stringByAppendingString:code];
 
 }
 

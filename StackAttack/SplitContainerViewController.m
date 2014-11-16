@@ -22,14 +22,16 @@
   self = [super init];
   
   if (self) {
-    self.networkController = [NetworkController sharedNetworkController];
-    self.appDelegate = [[UIApplication sharedApplication] delegate];
+    NSLog(@"Do I even hit this?");
   }
   return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+  self.networkController = [NetworkController sharedNetworkController];
+  self.appDelegate = [[UIApplication sharedApplication] delegate];
 
   UISplitViewController *splitVC = self.childViewControllers[0];
   splitVC.delegate = self;
@@ -41,14 +43,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController {
-  AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-  if (appDelegate.hasLaunched == YES) {
-    return NO;
-  } else {
-    return YES;
-  }
-}
+//- (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController {
+//  AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+//  if (appDelegate.hasLaunched == YES) {
+//    return NO;
+//  } else {
+//    return YES;
+//  }
+//}
+
+
 
 @end
 

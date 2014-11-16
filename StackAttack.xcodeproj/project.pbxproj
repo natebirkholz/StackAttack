@@ -45,6 +45,8 @@
 		433446621A126B88008959C5 /* SplitContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitContainerViewController.m; sourceTree = "<group>"; };
 		433446641A12B1B9008959C5 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		433446651A12B1B9008959C5 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		433A64801A16C98E007301EA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		433A64811A16C98E007301EA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		43B84B251A12DC5200449DA9 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		43B84B261A12DC5200449DA9 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		43D7015D1A114B4A00D2DD5A /* StackAttack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackAttack.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -302,6 +304,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				43D7016E1A114B4A00D2DD5A /* Base */,
+				433A64801A16C98E007301EA /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				43D701731A114B4A00D2DD5A /* Base */,
+				433A64811A16C98E007301EA /* fr */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
