@@ -108,10 +108,10 @@
             </objects>
             <point key="canvasLocation" x="538" y="268"/>
         </scene>
-        <!--Timeline View Controller-->
+        <!--Question Search View Controller-->
         <scene sceneID="ygK-Ii-u0W">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="PVr-21-7MA" customClass="TimelineViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="PVr-21-7MA" customClass="QuestionSearchViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wGh-s6-s5N"/>
                         <viewControllerLayoutGuide type="bottom" id="nCl-qZ-K9G"/>
@@ -120,11 +120,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="jF9-We-krv">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="jF9-We-krv">
                                 <rect key="frame" x="0.0" y="88" width="600" height="512"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="TIMELINE_CELL" selectionStyle="default" indentationWidth="10" reuseIdentifier="TIMELINE_CELL" id="txu-BH-42n">
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="TIMELINE_CELL" selectionStyle="default" indentationWidth="10" reuseIdentifier="TIMELINE_CELL" rowHeight="120" id="txu-BH-42n">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="txu-BH-42n" id="JPU-dw-ALl">

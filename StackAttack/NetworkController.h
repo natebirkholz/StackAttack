@@ -29,11 +29,13 @@
 @property (nonatomic, retain) NSString *someProperty;
 @property (nonatomic, strong) NSString *key_for;
 @property (nonatomic, strong) NSOperationQueue *imageQueue;
+@property (nonatomic, strong) NSString *access_token; 
 
 + (id)sharedNetworkController;
 
 - (NSString *) makeRequestOAuthAccessStepOne;
 
 - (void) getImageFromURL:(NSString *) imageURL completionHandler:(void (^)(UIImage *imageFor))completionHandler;
+- (void) getQuestionsFromSearchBar:(NSString *)searchBarText completionHandler:(void (^)(NSArray *questions))completionHandler;
 
 @end

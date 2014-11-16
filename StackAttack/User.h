@@ -17,4 +17,6 @@
 @property (nonatomic, strong) NSString *link_url;
 @property (nonatomic, strong) UIImage *user_avatar;
 
++ (User *) parseOwnerDictionaryIntoUser:(NSDictionary*)ownerDictionary;
+
 @end

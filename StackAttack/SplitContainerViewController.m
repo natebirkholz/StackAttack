@@ -43,14 +43,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-//- (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController {
-//  AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-//  if (appDelegate.hasLaunched == YES) {
-//    return NO;
-//  } else {
-//    return YES;
-//  }
-//}
+- (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController {
+  AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+  if (appDelegate.hasLaunched == YES) {
+    return YES;
+  } else {
+    return YES;
+  }
+}
 
 
 

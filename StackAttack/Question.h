@@ -20,4 +20,6 @@
 @property NSInteger question_id;
 @property (nonatomic, strong) UIImage *avatar;
 
++ (NSArray *)parseJSONDataIntoQuestions:(NSData *)rawJSonData;
+
 @end

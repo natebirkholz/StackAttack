@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  QuestionSearchViewController.h
 //  StackAttack
 //
 //  Created by Nathan Birkholz on 11/10/14.
@@ -12,7 +12,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface TimelineViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+@interface QuestionSearchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;

@@ -42,14 +42,12 @@
 
 
 - (IBAction)buttonPressed:(id)sender; {
-
-
-
+  NSLog(@"Button pressed");
   WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.frame];
   webView.navigationDelegate = self;
 
   NSString *urlString = [self.networkController makeRequestOAuthAccessStepOne];
-  NSLog(@"the urlString is %@", urlString);
+  NSLog(@"------->the urlString is %@", urlString);
   NSURL *url = [[NSURL alloc] initWithString:urlString];
   NSURLRequest *request = [NSURLRequest requestWithURL:url];
   [webView loadRequest:request];
@@ -67,32 +65,42 @@
   NSLog(@"%@", urlFromRequest.host);
 
   if ([urlFromRequest.description containsString:@"access_token"]) {
+    NSLog(@"access_token received");
     [webView removeFromSuperview];
     decisionHandler(WKNavigationActionPolicyAllow);
 
     NSArray *components = [[urlFromRequest description] componentsSeparatedByString:@"="];
 
-    NSString *token;
+    NSString *tokenFrom = [[NSString alloc] init];
     BOOL nextString = NO;
 
     for (NSString *component in components) {
       if (nextString == YES) {
-        token = component;
+        tokenFrom = component;
       } else if ([component containsString:@"token"]) {
         nextString = YES;
       }
     }
 
-    [[NSUserDefaults standardUserDefaults] setValue:token forKey:@"access_token"];
+    NSLog(@"The token is FOR REFERENCE VVVVVV^^^^^^^^^VVVVVVV %@", tokenFrom);
+
+    [[NSUserDefaults standardUserDefaults] setObject:tokenFrom forKey:@"access_token"];
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hasLaunched"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    self.networkController.access_token = tokenFrom;
+
+    NSString *key = @"hasLaunched";
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL valueFor = [defaults valueForKey:key];
+    NSLog(@"IIIIIIIIII %i", valueFor);
+#define NSStringFromBOOL(aBOOL)    aBOOL? @"YES" : @"NO"
+    NSLog(@"or also %@", NSStringFromBOOL(valueFor));
 
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     [self presentViewController:[storyboard instantiateInitialViewController] animated:true completion:nil];
   } else {
     decisionHandler(WKNavigationActionPolicyAllow);
   }
-
-
 
 }
 

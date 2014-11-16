@@ -19,24 +19,28 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-  self.networkController = [[NetworkController alloc] init];
+
 
   NSString *key = @"hasLaunched";
 
   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-  BOOL valueFor = [defaults valueForKey:key];
+  BOOL valueFor = [defaults boolForKey:key];
+
+//  NSLog(@"IIIIIIIIII -------------- %i", valueFor);
+//#define NSStringFromBOOL(aBOOL)    aBOOL? @"YES" : @"NO"
+//  NSLog(@"or also %@", NSStringFromBOOL(valueFor));
+
+  self.networkController = [[NetworkController alloc] init];
 
   if (valueFor == YES) {
     self.hasLaunched = YES;
   } else {
-    [defaults setBool:YES forKey:key];
-    [defaults synchronize];
-
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     UIViewController *webView = [storyboard instantiateViewControllerWithIdentifier:@"WEB_VC"];
 
     self.window.rootViewController = webView;
   }
+
 
 
   return YES;

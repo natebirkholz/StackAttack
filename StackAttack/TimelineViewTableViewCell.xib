@@ -10,7 +10,6 @@
             <string>TerminusTTF</string>
             <string>TerminusTTF</string>
             <string>TerminusTTF</string>
-            <string>TerminusTTF</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -31,31 +30,28 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tagsArrayLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="ycf-bJ-wSP">
-                        <rect key="frame" x="8" y="99" width="84" height="13"/>
+                        <rect key="frame" x="8" y="99" width="296" height="13"/>
                         <fontDescription key="fontDescription" name="TerminusTTF" family="Terminus (TTF)" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="linkLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="upZ-nC-lkl">
-                        <rect key="frame" x="80" y="8" width="54" height="13"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="linkLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="upZ-nC-lkl">
+                        <rect key="frame" x="80" y="8" width="224" height="13"/>
                         <fontDescription key="fontDescription" name="TerminusTTF" family="Terminus (TTF)" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titleLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsI-b1-XpP">
-                        <rect key="frame" x="80" y="23" width="80" height="17"/>
-                        <fontDescription key="fontDescription" name="TerminusTTF" family="Terminus (TTF)" pointSize="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titleLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsI-b1-XpP">
+                        <rect key="frame" x="80" y="23" width="224" height="15"/>
+                        <fontDescription key="fontDescription" name="TerminusTTF" family="Terminus (TTF)" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bodyLabel" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h9X-tB-b0b">
-                        <rect key="frame" x="80" y="42" width="59" height="14"/>
-                        <fontDescription key="fontDescription" name="TerminusTTF" family="Terminus (TTF)" pointSize="13"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nameLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="ARh-hW-vft">
-                        <rect key="frame" x="11" y="74" width="59" height="14"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nameLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ARh-hW-vft">
+                        <rect key="frame" x="4" y="74" width="72" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="72" id="PHc-yv-2dM"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="TerminusTTF" family="Terminus (TTF)" pointSize="13"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -68,16 +64,16 @@
                     <constraint firstItem="upZ-nC-lkl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="CI6-ax-KPY"/>
                     <constraint firstItem="ARh-hW-vft" firstAttribute="centerX" secondItem="Fmm-xG-s1r" secondAttribute="centerX" id="Ek6-Ht-7M2"/>
                     <constraint firstItem="ycf-bJ-wSP" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="G3t-Ve-phY"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="upZ-nC-lkl" secondAttribute="trailing" constant="8" id="GKs-ye-GTF"/>
                     <constraint firstItem="Fmm-xG-s1r" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="JkX-DO-CY3"/>
-                    <constraint firstItem="h9X-tB-b0b" firstAttribute="leading" secondItem="Fmm-xG-s1r" secondAttribute="trailing" constant="8" id="NuN-iY-fIK"/>
                     <constraint firstItem="Fmm-xG-s1r" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Ogl-bE-RYR"/>
                     <constraint firstItem="ycf-bJ-wSP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="TPB-xc-Bjo"/>
-                    <constraint firstItem="h9X-tB-b0b" firstAttribute="top" secondItem="hsI-b1-XpP" secondAttribute="bottom" constant="2" id="blf-NZ-Hs2"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="hsI-b1-XpP" secondAttribute="trailing" constant="8" id="Up7-Mu-mJi"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ycf-bJ-wSP" secondAttribute="trailing" constant="8" id="pKB-Xl-zcq"/>
                     <constraint firstItem="hsI-b1-XpP" firstAttribute="top" secondItem="upZ-nC-lkl" secondAttribute="bottom" constant="2" id="qLo-Xo-af1"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="bodyLabel" destination="h9X-tB-b0b" id="5gP-dw-ow5"/>
                 <outlet property="imageViewCell" destination="Fmm-xG-s1r" id="HYE-WU-n03"/>
                 <outlet property="linkLabel" destination="upZ-nC-lkl" id="HKp-Ic-i2p"/>
                 <outlet property="nameLabel" destination="ARh-hW-vft" id="1Hx-jJ-kxL"/>
