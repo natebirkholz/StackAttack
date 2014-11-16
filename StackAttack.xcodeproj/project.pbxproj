@@ -12,6 +12,7 @@
 		433446631A126B88008959C5 /* SplitContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 433446621A126B88008959C5 /* SplitContainerViewController.m */; };
 		433446661A12B1B9008959C5 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 433446651A12B1B9008959C5 /* DetailViewController.m */; };
 		438906831A18A5B600D2D6DB /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 438906821A18A5B600D2D6DB /* test.json */; };
+		438906851A18AA1F00D2D6DB /* test2.json in Resources */ = {isa = PBXBuildFile; fileRef = 438906841A18AA1F00D2D6DB /* test2.json */; };
 		43B84B271A12DC5200449DA9 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B84B261A12DC5200449DA9 /* WebViewController.m */; };
 		43D701631A114B4A00D2DD5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D701621A114B4A00D2DD5A /* main.m */; };
 		43D701661A114B4A00D2DD5A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D701651A114B4A00D2DD5A /* AppDelegate.m */; };
@@ -49,6 +50,7 @@
 		433A64801A16C98E007301EA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		433A64811A16C98E007301EA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		438906821A18A5B600D2D6DB /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
+		438906841A18AA1F00D2D6DB /* test2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test2.json; sourceTree = "<group>"; };
 		43B84B251A12DC5200449DA9 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		43B84B261A12DC5200449DA9 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		43D7015D1A114B4A00D2DD5A /* StackAttack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackAttack.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,6 +164,7 @@
 		43D7017D1A114B4B00D2DD5A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				438906841A18AA1F00D2D6DB /* test2.json */,
 				438906821A18A5B600D2D6DB /* test.json */,
 				43D7017E1A114B4B00D2DD5A /* Info.plist */,
 			);
@@ -260,6 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				438906851A18AA1F00D2D6DB /* test2.json in Resources */,
 				438906831A18A5B600D2D6DB /* test.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

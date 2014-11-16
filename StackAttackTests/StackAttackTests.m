@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "Question.h"
 
 @interface StackAttackTests : XCTestCase
 
@@ -35,6 +36,22 @@
     [self measureBlock:^{
         // Put the code you want to measure the time of here.
     }];
+}
+
+- (void)testQuestionParser {
+
+  NSBundle *bundleForTests = [NSBundle bundleForClass:[self class]];
+  NSString *pathForTests = [bundleForTests pathForResource:@"test2" ofType:@"json"];
+  NSData *dataForTest = [NSData dataWithContentsOfFile:pathForTests];
+  NSArray *questions = [Question parseJSONDataIntoQuestions:dataForTest];
+
+  XCTAssertNotNil(questions, @"No results");
+
+  Question *question = questions.firstObject;
+
+  XCTAssertTrue([question.title isEqualToString:@"Objective-C: data not returned as JSON"]);
+
+  XCTAssertTrue(questions.count == 1);
 }
 
 @end
