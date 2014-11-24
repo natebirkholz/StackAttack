@@ -52,14 +52,11 @@
       self.someProperty = @"Default Property Value";
       self.key_for = @")Dwa1LBFUglgpasZ0dRQUg((";
 
-
-
       if ([[NSUserDefaults standardUserDefaults] boolForKey:@"hasLaunched"] == YES) {
         self.access_token = [[NSUserDefaults standardUserDefaults] objectForKey:@"access_token"];
       } else {
         NSLog(@"no token found");
       }
-
     }
     return self;
 }
@@ -69,7 +66,6 @@
 // ########################################
 
 - (NSString *) makeRequestOAuthAccessStepOne {
-  
   NSArray *stringsFor = [[NSArray alloc] initWithObjects: self.stackOverflowOAuthURLStepOne, @"client_id=", self.clientID, self.amp, self.scope, self.amp, self.redirectURL, nil];
   NSString *url = [stringsFor componentsJoinedByString:(NSString *) @""];
   return url;
@@ -101,9 +97,7 @@
 }
 
 - (NSString *) buildAuthenticatedSearchString:(NSString *)searchString {
-
   NSString *tokenString = [[NSUserDefaults standardUserDefaults] objectForKey:@"access_token"];
-
   NSString *assembledString = [[NSString alloc] init];
   assembledString = [assembledString stringByAppendingString:self.apiURL];
   assembledString = [assembledString stringByAppendingString:self.searchURL];
@@ -112,14 +106,11 @@
   assembledString = [assembledString stringByAppendingString:tokenString];
   assembledString = [assembledString stringByAppendingString:@"&key="];
   assembledString = [assembledString stringByAppendingString:self.key_for];
-
-  NSLog(@"longass assembled url is %@", assembledString);
-
+  NSLog(@"assembled url is %@", assembledString);
   return assembledString;
 }
 
 - (void) getQuestionsFromSearchBar:(NSString *)searchBarText completionHandler:(void (^)(NSArray *questions))completionHandler {
-
   NSLog(@"SearchBar text is %@", searchBarText);
   BOOL checkToken = self.checkForAuthToken;
   if (checkToken == YES) {
@@ -128,9 +119,8 @@
   NSString *searchString = [searchBarText stringByReplacingOccurrencesOfString:@" " withString: @";"];
   NSLog(@"SearchString is now %@", searchString);
   NSString *searchURL = [self buildAuthenticatedSearchString:searchString];
-      NSLog(@"search url is %@", [searchURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]);
+  NSLog(@"search url is %@", [searchURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]);
   NSURL *urlForSearch = [NSURL URLWithString:[searchURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-
   [self getDataFromURL:urlForSearch completionHandler:^(NSData *dataFrom) {
     NSArray *arrayFrom = [Question parseJSONDataIntoQuestions:dataFrom];
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
@@ -148,19 +138,13 @@
   NSURLSessionDataTask *dataTask = [getSession dataTaskWithRequest:request completionHandler:^(NSData *dataFrom, NSURLResponse *resonseFrom, NSError *error) {
     if (error != nil) {
       NSLog(@"ERROR RIGHT HERE: %@", [error localizedDescription]);
-      completionHandler(error);
     } else {
       NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)resonseFrom;
-      NSDictionary *strongStrings = [httpResponse allHeaderFields];
-      for (NSString *item in strongStrings) {
-        NSLog(@"Header item is %@", item);
-      }
-
-      [strongStrings enumerateKeysAndObjectsUsingBlock:^(id key, id object, BOOL *stop) {
+      NSDictionary *headerStrings = [httpResponse allHeaderFields];
+      [headerStrings enumerateKeysAndObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id key, id object, BOOL *stop) {
         NSLog(@"The key is %@", key);
         NSLog(@"The value is %@", object);
       }];
-
       NSInteger statusCode = [httpResponse statusCode];
       NSLog(@"Status code is: %ld", (long)statusCode);
       switch (statusCode) {
@@ -177,7 +161,6 @@
       }
     }
   }];
-
   [dataTask resume];
 }
 

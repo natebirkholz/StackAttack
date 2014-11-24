@@ -21,7 +21,7 @@
     self.link = (NSString *)questionDictionary[@"link"];
     self.title = (NSString *)questionDictionary[@"title"];
     self.body = (NSString *)questionDictionary[@"body"];
-    NSString *urlForImage = [questionDictionary valueForKeyPath:@"owner.profile_image"]; // KC! KVC!
+    NSString *urlForImage = [questionDictionary valueForKeyPath:@"owner.profile_image"];
     __block UIImage *imageForIs = [[UIImage alloc] init];
     [self.networkController getImageFromURL:urlForImage completionHandler:^(UIImage *imageFor) {
        imageForIs = (UIImage *)imageFor;

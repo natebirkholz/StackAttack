@@ -25,7 +25,6 @@
 
   if (self) {
     NSLog(@"Init method QuestionSearchViewController");
-
   }
   return self;
 }
@@ -69,16 +68,12 @@
   User *userForRow = [User parseOwnerDictionaryIntoUser:ownerForRow];
   TimelineViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
   cell.titleLabel.text = questionForRow.title;
-//  cell.bodyLabel.text = questionForRow.body;
   cell.linkLabel.text = questionForRow.link;
   cell.nameLabel.text = userForRow.display_name;
-  NSString *imageSource = userForRow.profile_image_url;
-
-  NSString *tagsString = [questionForRow.tags componentsJoinedByString:(NSString *) @", "];
-  cell.tagsArrayLabel.text = tagsString;
+  cell.tagsArrayLabel.text = [questionForRow.tags componentsJoinedByString:(NSString *) @", "];
   NSInteger currenttag = cell.tag + 1;
   cell.tag = currenttag;
-
+  NSString *imageSource = userForRow.profile_image_url;
   [self.networkController getImageFromURL:imageSource completionHandler:^(UIImage *imageFor) {
     UIImage *avatarFor = imageFor;
     [UIView transitionWithView:cell.imageViewCell duration:0.3 options:UIViewAnimationOptionTransitionFlipFromBottom animations:^{
@@ -95,11 +90,8 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  NSLog(@"I'm here-------------------------------------------------------------");
   Question *selectedQuestion = self.questions[indexPath.row];
-
   [self performSegueWithIdentifier:@"SHOW_DET" sender:selectedQuestion];
-
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -107,7 +99,6 @@
     DetailViewController *destinationVC = segue.destinationViewController;
     Question *sentQuestion = sender;
     destinationVC.questionFor = sentQuestion;
-
   }
 }
 
@@ -128,10 +119,7 @@
 
   NSString *stringFor = text;
   NSRegularExpression *regEx = [NSRegularExpression regularExpressionWithPattern:@"[^0-9a-zA-Z\n]" options: 0 error: nil];
-  NSUInteger matchFor = [regEx numberOfMatchesInString:stringFor
-                                                      options:NSMatchingWithTransparentBounds
-                                                        range:NSMakeRange(0, stringFor.length)];
-
+  NSUInteger matchFor = [regEx numberOfMatchesInString:stringFor options:NSMatchingWithTransparentBounds range:NSMakeRange(0, stringFor.length)];
     if (matchFor > 0) {
       return NO;
     } else {

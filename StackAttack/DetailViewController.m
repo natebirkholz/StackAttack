@@ -39,7 +39,6 @@
 
 -(void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear: animated];
-
   self.titleLabel.text = self.questionFor.title;
   self.bodyLabel.text = self.questionFor.body;
   NSString *tagsString = [self.questionFor.tags componentsJoinedByString:(NSString *) @", "];

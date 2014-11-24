@@ -32,9 +32,7 @@
 @property (nonatomic, strong) NSString *access_token; 
 
 + (id)sharedNetworkController;
-
 - (NSString *) makeRequestOAuthAccessStepOne;
-
 - (void) getImageFromURL:(NSString *) imageURL completionHandler:(void (^)(UIImage *imageFor))completionHandler;
 - (void) getQuestionsFromSearchBar:(NSString *)searchBarText completionHandler:(void (^)(NSArray *questions))completionHandler;
 

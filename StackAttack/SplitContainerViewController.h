@@ -15,4 +15,6 @@
 @property (nonatomic, strong) NetworkController *networkController;
 @property (nonatomic, weak) AppDelegate *appDelegate;
 
+- (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController;
+
 @end

@@ -20,35 +20,18 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
-//  UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-//  UINavigationController *navController = [splitViewController.viewControllers objectAtIndex:0];
-//
-//  QuestionSearchViewController *questionSearchViewController = (QuestionSearchViewController *)[navController topViewController];
-//  DetailViewController *detailViewController = [splitViewController.viewControllers objectAtIndex:1];
-
-  NSString *key = @"hasLaunched";
-
-  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-  BOOL valueFor = [defaults boolForKey:key];
-
-//  NSLog(@"IIIIIIIIII -------------- %i", valueFor);
-//#define NSStringFromBOOL(aBOOL)    aBOOL? @"YES" : @"NO"
-//  NSLog(@"or also %@", NSStringFromBOOL(valueFor));
-
   self.networkController = [[NetworkController alloc] init];
 
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  NSString *key = @"hasLaunched";
+  BOOL valueFor = [defaults boolForKey:key];
   if (valueFor == YES) {
     self.hasLaunched = YES;
   } else {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     UIViewController *webView = [storyboard instantiateViewControllerWithIdentifier:@"WEB_VC"];
-
     self.window.rootViewController = webView;
   }
-
-//  questionSearchViewController.delegate = detailViewController;
-
   return YES;
 }
 
